@@ -27,7 +27,7 @@ export const RSVPForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 relative py-10">
+    <div className="max-w-5xl mx-auto px-6 relative py-4">
       {/* Premium ambient backdrop & glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-brand-gold/15 to-transparent rounded-full blur-[100px] pointer-events-none -z-10" />
 
@@ -36,7 +36,7 @@ export const RSVPForm: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="glass p-10 sm:p-14 lg:p-16 rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(197,160,89,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-16"
+        className="glass p-8 sm:p-10 lg:p-12 rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(197,160,89,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-16"
       >
         {/* Soft top border line */}
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-champagne via-brand-mocha/80 to-brand-champagne" />
@@ -57,7 +57,7 @@ export const RSVPForm: React.FC = () => {
           </h2>
           
           <p className="text-brand-sand/90 font-serif text-lg leading-relaxed mb-6">
-            Your presence means the world to us. Please kindly let us know if you will be able to join our celebration.
+            Your presence means the world to us. Please kindly let us know if you will be able to join us for the Waleema lunch.
           </p>
 
           <div className="w-12 h-[1px] bg-brand-gold/50 mx-auto lg:mx-0" />
@@ -102,7 +102,7 @@ export const RSVPForm: React.FC = () => {
                   <input
                     required
                     type="text"
-                    placeholder="E.g., John & Jane Doe"
+                    placeholder="E.g., Mr. & Mrs. Rizwan"
                     className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}

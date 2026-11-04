@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Clock, Calendar, MapPin, Heart, Sparkles } from 'lucide-react';
 
-export const CeremonyDetails: React.FC = () => {
+export const CeremonyDetails: React.FC<{ guestName?: string }> = ({ guestName }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
       {/* Premium ambient backdrop */}
@@ -19,18 +19,18 @@ export const CeremonyDetails: React.FC = () => {
           >
             <div className="inline-flex items-center gap-4 mb-6">
               <span className="text-brand-mocha uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
-                The Sacred Union
+                Insha Allah
               </span>
               <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-brand-mocha/60 to-transparent" />
             </div>
             
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-brand-mocha mb-8 leading-[1.1] drop-shadow-sm">
-              A Celebration of <br />
-              <span className="italic font-light text-brand-mocha">Tradition & Love</span>
+              The Waleema <br />
+              <span className="italic font-light text-brand-mocha">Ceremony</span>
             </h2>
             
-            <p className="text-brand-sand/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
-              We are honored to invite you to witness our union as we exchange vows at St. Mary's Cathedral, surrounded by the grace of God and the warmth of our loved ones.
+            <p className="text-brand-sand/90 font-serif text-lg sm:text-xl leading-relaxed mb-8 max-w-lg">
+              Mr. Mohamed Anfaz &amp; Mrs. Samsul Nihara request the honour of the presence of {guestName ? <strong className="font-semibold text-brand-mocha">{guestName}</strong> : 'you'} on the occasion of the Waleema Ceremony of their beloved son Al Haafiz Aashiq &amp; Azka, beloved daughter of Mrs. Noorul Hinaya.
             </p>
 
             {/* Premium Timeline */}
@@ -42,8 +42,8 @@ export const CeremonyDetails: React.FC = () => {
                   <Calendar className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">Monday, March 22</h4>
-                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">The Year Two Thousand Twenty Seven</p>
+                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">Saturday, 26th December</h4>
+                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">The Year Two Thousand Twenty Six</p>
                 </div>
               </div>
 
@@ -53,8 +53,8 @@ export const CeremonyDetails: React.FC = () => {
                   <Clock className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">03:30 PM</h4>
-                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Wedding Ceremony — St. Mary's Cathedral, Colombo</p>
+                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">12:30 PM</h4>
+                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Waleema Lunch</p>
                 </div>
               </div>
 
@@ -64,8 +64,8 @@ export const CeremonyDetails: React.FC = () => {
                   <MapPin className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">ITC Rathnadeepa</h4>
-                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Colombo</p>
+                  <h4 className="font-serif text-2xl sm:text-3xl text-brand-mocha mb-2 group-hover:text-brand-mocha transition-colors duration-500">Hill View Resort</h4>
+                  <p className="text-brand-sand/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">195, Kandawatta, Koswattagoda, Dharga Town</p>
                 </div>
               </div>
             </div>
@@ -88,13 +88,9 @@ export const CeremonyDetails: React.FC = () => {
             {/* Main Creative Image Frame */}
             <div className="relative aspect-[3/4] sm:aspect-[4/5] arch-shape overflow-hidden border-[6px] sm:border-[8px] border-white shadow-[0_20px_50px_rgba(197,160,89,0.2)] bg-white group">
               <img
-                src="/images/c.jpg"
-                onError={(e) => { 
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1519225421980-715cb02151ff?auto=format&fit=crop&q=80&w=800&h=1000"; 
-                  e.currentTarget.onerror = null; 
-                }}
+                src="/x.jpg"
                 alt="Ceremony Venue"
-                className="w-full h-full object-cover scale-[1.2] lg:scale-[1.15] object-[center_30%] transition-transform duration-[2s] ease-out group-hover:scale-[1.25] lg:group-hover:scale-[1.2]"
+                className="w-full h-full object-cover object-top transition-transform duration-[2s] ease-out group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 pointer-events-none mix-blend-overlay opacity-opacity-70 group-hover:opacity-100 transition-opacity duration-1000" />
             </div>
@@ -119,13 +115,12 @@ export const CeremonyDetails: React.FC = () => {
                 <Sparkles className="w-4 h-4 text-brand-gold animate-pulse flex-shrink-0" />
               </div>
               <div className="flex-1">
-                <h4 className="font-display text-2xl sm:text-4xl text-brand-mocha mb-1 sm:mb-2 tracking-tight">The Reception</h4>
-                <p className="text-brand-sand/90 font-serif text-sm sm:text-base leading-relaxed">
-                  Followed by a grand celebratory dinner and evening festivities at ITC Rathnadeepa.
+                <p dir="rtl" lang="ar" className="font-arabic text-xl sm:text-2xl text-brand-mocha mb-2 leading-loose">
+                  بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
                 </p>
-              </div>
-              <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-brand-champagne rounded-full border border-brand-gold/30 shadow-sm self-start sm:self-center flex-shrink-0">
-                <span className="text-brand-mocha font-sans font-bold tracking-[0.1em] sm:tracking-[0.2em] text-[9px] sm:text-[11px] uppercase block drop-shadow-sm">7:00 PM Onwards</span>
+                <p className="text-brand-sand/90 font-serif italic text-sm sm:text-base leading-relaxed">
+                  "May Allah bless you, shower His blessings upon you, and unite you both in goodness."
+                </p>
               </div>
             </div>
           </motion.div>

@@ -1,23 +1,21 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, Music, Camera, Utensils, PartyPopper } from 'lucide-react';
+import { Heart, Camera, Utensils } from 'lucide-react';
 
 const events = [
-  { time: '03:00 PM', title: 'Guest Arrival at Church', icon: Heart, desc: 'Welcoming our loved ones to St. Mary\'s Cathedral, Colombo' },
-  { time: '03:30 PM', title: 'Wedding Ceremony', icon: Music, desc: 'The sacred exchange of vows at the cathedral' },
-  { time: '07:00 PM', title: 'Reception Begins', icon: PartyPopper, desc: 'Welcome to ITC Rathnadeepa, Colombo' },
-  { time: '08:00 PM', title: 'Wedding Feast', icon: Utensils, desc: 'A grand celebratory dinner' },
-  { time: '09:30 PM', title: 'Cake Cutting', icon: Camera, desc: 'Sweet moments and photographs' },
+  { time: '12:00 PM', title: 'Arrival of Guests', icon: Heart, desc: 'Welcoming our loved ones to Hill View Resort, Dharga Town' },
+  { time: '12:30 PM', title: 'Waleema Lunch', icon: Utensils, desc: 'Sharing a blessed meal together, Insha Allah' },
+  { time: '01:30 PM', title: 'Duas & Felicitations', icon: Camera, desc: 'Blessings for the couple and cherished photographs' },
 ];
 
 export const Timeline: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10">
         <span className="text-brand-mocha uppercase tracking-[0.4em] text-[10px] font-medium mb-4 block">
           The Day's Flow
         </span>
-        <h2 className="text-5xl font-display text-brand-mocha tracking-tight">Wedding Timeline</h2>
+        <h2 className="text-5xl font-display text-brand-mocha tracking-tight">Waleema Programme</h2>
         <div className="w-12 h-px bg-brand-gold/30 mx-auto mt-6" />
       </div>
 
@@ -25,7 +23,7 @@ export const Timeline: React.FC = () => {
         {/* Vertical Line */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-gold/20 to-transparent" />
 
-        <div className="space-y-24">
+        <div className="space-y-12">
           {events.map((event, index) => (
             <motion.div
               key={event.title}

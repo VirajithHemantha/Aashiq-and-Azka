@@ -17,11 +17,11 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="inline-flex items-center gap-4 mb-6 mt-4">
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-brand-mocha/60" />
-            <span className="text-brand-mocha uppercase tracking-[0.5em] text-[11px] font-semibold font-sans drop-shadow-sm">The Protagonists</span>
+            <span className="text-brand-mocha uppercase tracking-[0.5em] text-[11px] font-semibold font-sans drop-shadow-sm">The Blessed Couple</span>
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-mocha/60" />
           </div>
           <h2 className="text-5xl sm:text-7xl font-display text-brand-mocha tracking-tight drop-shadow-sm">
-            Eleanor <span className="italic text-brand-mocha font-light mx-2">&</span> Alexander
+            <span className="font-script normal-case">Aashiq <span className="text-brand-gold mx-2">&</span> Azka</span>
           </h2>
         </motion.div>
       </div>
@@ -37,8 +37,9 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center lg:items-end">
             <span className="text-brand-mocha uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
-            <h3 className="text-4xl sm:text-5xl font-display text-brand-mocha mb-2 drop-shadow-sm">Alexander</h3>
-            <p className="text-brand-sand/90 font-serif italic text-base sm:text-lg">Son of Mr. Robert Sterling<br />& Mrs. Margaret Sterling</p>
+            <p className="text-brand-sand uppercase tracking-[0.3em] text-[10px] font-semibold mb-1">Al Haafiz</p>
+            <h3 className="text-5xl sm:text-6xl font-script text-brand-mocha mb-2 drop-shadow-sm">Aashiq</h3>
+            <p className="text-brand-sand/90 font-serif italic text-base sm:text-lg">Beloved son of Mr. Mohamed Anfaz<br />& Mrs. Samsul Nihara</p>
           </div>
           <div className="hidden lg:flex justify-end mt-8">
             <Heart className="w-6 h-6 text-brand-gold/60 fill-brand-gold/20 transform hover:scale-110 transition-transform cursor-pointer" />
@@ -58,13 +59,9 @@ export const CoupleDetails: React.FC = () => {
 
           <div className="relative w-[300px] h-[400px] sm:w-[360px] sm:h-[500px] lg:w-[420px] lg:h-[580px] rounded-[12rem_12rem_16px_16px] overflow-hidden border-[6px] border-white/90 shadow-[0_20px_50px_rgba(197,160,89,0.2)] bg-brand-champagne mx-auto z-10 transition-transform duration-700 group-hover:-translate-y-2">
             <img
-              src="/images/b.jpg"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800&h=1000";
-                e.currentTarget.onerror = null;
-              }}
-              alt="Samadhi and Madhawa"
-              className="w-full h-full object-cover scale-[1.2] lg:scale-[1.15] object-[center_30%] transition-transform duration-[1.5s] ease-out group-hover:scale-[1.25] lg:group-hover:scale-[1.2]"
+              src="/x.jpg"
+              alt="Aashiq and Azka"
+              className="w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05]"
             />
             {/* Elegant inner shadow & overlay */}
             <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] pointer-events-none" />
@@ -91,8 +88,8 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
             <span className="text-brand-mocha uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
-            <h3 className="text-4xl sm:text-5xl font-display text-brand-mocha mb-2 drop-shadow-sm">Eleanor</h3>
-            <p className="text-brand-sand/90 font-serif italic text-base sm:text-lg">Daughter of Mr. Charles Kensington<br />& Mrs. Victoria Kensington</p>
+            <h3 className="text-5xl sm:text-6xl font-script text-brand-mocha mb-2 drop-shadow-sm">Azka</h3>
+            <p className="text-brand-sand/90 font-serif italic text-base sm:text-lg">Beloved daughter of<br />Mrs. Noorul Hinaya</p>
           </div>
           <div className="hidden lg:flex justify-start mt-8">
             <Heart className="w-6 h-6 text-brand-gold/60 fill-brand-gold/20 transform hover:scale-110 transition-transform cursor-pointer" />

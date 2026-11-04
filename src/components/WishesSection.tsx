@@ -2,25 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Loader2, Sparkles } from 'lucide-react';
 
-interface Wish {
-  id: string;
-  name: string;
-  message: string;
-  createdAt: Date;
-}
-
-const getRelativeTime = (date: Date) => {
-  const diff = Date.now() - date.getTime();
-  const minutes = Math.floor(diff / 60000);
-  if (minutes < 1) return 'just now';
-  if (minutes < 60) return `${minutes}m ago`;
-  const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours}h ago`;
-  return `${Math.floor(hours / 24)}d ago`;
-};
-
 export const WishesSection: React.FC = () => {
-  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [sent, setSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -33,16 +16,8 @@ export const WishesSection: React.FC = () => {
       // Simulate network request latency
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      const newWish: Wish = {
-        id: Date.now().toString(),
-        name: formData.name,
-        message: formData.message,
-        createdAt: new Date(),
-      };
-      
-      // Prepend the new wish to the list
-      setWishes(prev => [newWish, ...prev]);
       setFormData({ name: '', message: '' });
+      setSent(true);
     } catch (error) {
       console.error('Error submitting wish: ', error);
     } finally {
@@ -82,7 +57,7 @@ export const WishesSection: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="text-center mb-10">
               <p className="text-brand-sand font-serif italic text-lg leading-relaxed max-w-lg mx-auto">
-                Leave a little note or a piece of advice for our journey ahead.
+                Leave a dua or a little note for Aashiq & Azka as they begin their journey together.
               </p>
             </div>
 
@@ -92,7 +67,7 @@ export const WishesSection: React.FC = () => {
                 <input
                   required
                   type="text"
-                  placeholder="E.g., Uncle John"
+                  placeholder="E.g., Aunty Fathima"
                   className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-mocha"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -103,10 +78,10 @@ export const WishesSection: React.FC = () => {
                 <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2 text-left">Your Message</label>
                 <textarea
                   required
-                  placeholder="Wishing you a lifetime of happiness..."
+                  placeholder="Barakallahu lakuma..."
                   className="w-full bg-white/80 px-6 py-5 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-mocha"
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) => { setSent(false); setFormData({ ...formData, message: e.target.value }); }}
                 />
               </div>
             </div>
@@ -130,31 +105,19 @@ export const WishesSection: React.FC = () => {
           </form>
         </motion.div>
 
-        {/* Wishes List - Stacked Centrally Below */}
-        <div className="w-full space-y-6 max-h-[800px] overflow-y-auto pr-4 scrollbar-thin">
-          <AnimatePresence initial={false}>
-            {wishes.map((wish) => (
-              <motion.div
-                key={wish.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="glass p-8 sm:p-10 rounded-3xl border border-brand-gold/20 shadow-sm relative overflow-hidden group bg-white/50 backdrop-blur-sm"
-              >
-                <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand-mocha/20 to-brand-gold/40 group-hover:from-brand-mocha group-hover:to-brand-gold transition-all duration-500" />
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4">
-                  <h4 className="font-display text-2xl text-brand-mocha tracking-tight pl-2">{wish.name}</h4>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-brand-sand font-bold bg-white/60 px-3 py-1 rounded-full border border-stone-100/50">
-                    {wish.createdAt ? getRelativeTime(wish.createdAt) : 'just now'}
-                  </span>
-                </div>
-                <p className="text-brand-sand font-serif italic text-lg sm:text-lg leading-relaxed pl-2">
-                  "{wish.message}"
-                </p>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+        {/* Submitted wishes are not displayed publicly — only a thank-you note */}
+        <AnimatePresence>
+          {sent && (
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="text-center text-brand-sand font-serif italic text-lg -mt-8"
+            >
+              Jazakallahu khairan — your blessing has been sent to Aashiq &amp; Azka.
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
