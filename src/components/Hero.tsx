@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Sparkles, Heart } from 'lucide-react';
 import { FloatingPetals } from './FloatingPetals';
 import { Monogram } from './Monogram';
+import { CoupleName } from './CoupleName';
 
 export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,10 +97,10 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[140%] bg-white/40 blur-[50px] sm:blur-[80px] rounded-full pointer-events-none" />
 
             <h1 className="relative text-6xl sm:text-[6.5rem] lg:text-[8rem] font-script text-brand-gold-deep leading-[1.1] sm:leading-[1] drop-shadow-sm">
-              Aashiq <br className="sm:hidden" />
+              <CoupleName name="Aashiq" /> <br className="sm:hidden" />
               <span className="text-brand-gold mx-2 sm:mx-6 text-5xl sm:text-[5rem] lg:text-[6rem] inline-block">&</span>
               <br className="sm:hidden" />
-              Azka
+              <CoupleName name="Azka" />
             </h1>
           </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Heart } from 'lucide-react';
+import { CoupleName } from './CoupleName';
 
 export const CoupleDetails: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ export const CoupleDetails: React.FC = () => {
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-mocha/60" />
           </div>
           <h2 className="text-5xl sm:text-7xl font-display text-brand-gold-deep tracking-tight drop-shadow-sm">
-            <span className="font-script normal-case">Aashiq <span className="text-brand-gold mx-2">&</span> Azka</span>
+            <span className="normal-case"><CoupleName name="Aashiq" /> <span className="font-script text-brand-gold mx-2">&</span> <CoupleName name="Azka" /></span>
           </h2>
         </motion.div>
       </div>
@@ -38,7 +39,7 @@ export const CoupleDetails: React.FC = () => {
           <div className="mb-4 flex flex-col items-center lg:items-end">
             <span className="text-brand-gold-deep uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
             <p className="text-brand-gold-text uppercase tracking-[0.3em] text-[10px] font-semibold mb-1">Al Haafiz</p>
-            <h3 className="text-5xl sm:text-6xl font-script text-brand-gold-deep mb-2 drop-shadow-sm">Aashiq</h3>
+            <h3 className="text-5xl sm:text-6xl font-script text-brand-gold-deep mb-2 drop-shadow-sm"><CoupleName name="Aashiq" /></h3>
             <p className="text-brand-gold-text/90 font-serif italic text-base sm:text-lg">Beloved son of Mr. Mohamed Anfaz<br />& Mrs. Samsul Nihara</p>
           </div>
           <div className="hidden lg:flex justify-end mt-8">
@@ -88,7 +89,7 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
             <span className="text-brand-gold-deep uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
-            <h3 className="text-5xl sm:text-6xl font-script text-brand-gold-deep mb-2 drop-shadow-sm">Azka</h3>
+            <h3 className="text-5xl sm:text-6xl font-script text-brand-gold-deep mb-2 drop-shadow-sm"><CoupleName name="Azka" /></h3>
             <p className="text-brand-gold-text/90 font-serif italic text-base sm:text-lg">Beloved daughter of<br />Mrs. Noorul Hinaya</p>
           </div>
           <div className="hidden lg:flex justify-start mt-8">

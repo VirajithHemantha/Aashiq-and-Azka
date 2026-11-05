@@ -14,6 +14,7 @@ import { RSVPForm } from './components/RSVPForm';
 import { WishesSection } from './components/WishesSection';
 import { DecorativeDivider } from './components/DecorativeDivider';
 import { Monogram } from './components/Monogram';
+import { CoupleName } from './components/CoupleName';
 import { getGuestFromLocation } from './config';
 
 export default function App() {
@@ -137,7 +138,7 @@ export default function App() {
       <footer className="py-12 bg-white/90 border-t border-brand-gold/20 text-center relative overflow-hidden mt-6">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-gold/10 blur-[80px] rounded-full pointer-events-none" />
         <Monogram className="relative w-20 h-20 mx-auto mb-4" />
-        <p className="relative font-script text-5xl sm:text-6xl text-brand-gold-deep mb-2">Aashiq & Azka</p>
+        <p className="relative font-script text-5xl sm:text-6xl text-brand-gold-deep mb-2"><CoupleName name="Aashiq" /> <span className="font-script">&</span> <CoupleName name="Azka" /></p>
         <span className="relative text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-brand-gold-text font-semibold block mb-8">
           Saturday, 26th December 2026
         </span>
