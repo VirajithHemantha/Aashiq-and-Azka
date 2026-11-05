@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Loader2, Sparkles } from 'lucide-react';
+import { toast } from 'sonner';
+import { submitToSheet } from '../sheets';
 
-export const WishesSection: React.FC = () => {
+export const WishesSection: React.FC<{ guestName?: string }> = ({ guestName = '' }) => {
   const [sent, setSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,13 +15,17 @@ export const WishesSection: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate network request latency
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await submitToSheet('WISH', {
+        invitedAs: guestName,
+        name: formData.name,
+        message: formData.message,
+      });
 
       setFormData({ name: '', message: '' });
       setSent(true);
     } catch (error) {
       console.error('Error submitting wish: ', error);
+      toast.error('Sorry, we could not send your blessing. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

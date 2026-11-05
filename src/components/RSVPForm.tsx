@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, Loader2, Heart, Sparkles } from 'lucide-react';
+import { toast } from 'sonner';
+import { submitToSheet } from '../sheets';
 
-export const RSVPForm: React.FC = () => {
+export const RSVPForm: React.FC<{ guestName?: string }> = ({ guestName = '' }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    fullName: guestName,
+    attendance: 'Joyfully Attending',
     guests: '1',
+    phone: '',
     dietaryNotes: '',
   });
+  const attending = formData.attendance === 'Joyfully Attending';
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -15,14 +20,19 @@ export const RSVPForm: React.FC = () => {
     setStatus('loading');
 
     try {
-      // Simulate network request latency
-      await new Promise(resolve => setTimeout(resolve, 800));
-
+      await submitToSheet('RSVP', {
+        invitedAs: guestName,
+        fullName: formData.fullName,
+        attendance: formData.attendance,
+        guests: attending ? formData.guests : '0',
+        phone: formData.phone,
+        notes: formData.dietaryNotes,
+      });
       setStatus('success');
-      setFormData({ fullName: '', guests: '1', dietaryNotes: '' });
     } catch (error) {
       console.error('Error sending RSVP: ', error);
       setStatus('error');
+      toast.error('Sorry, we could not send your response. Please try again.');
     }
   };
 
@@ -79,7 +89,7 @@ export const RSVPForm: React.FC = () => {
                 </div>
                 <h3 className="text-4xl font-display text-brand-gold-deep mb-4 tracking-tight drop-shadow-sm">With Gratitude</h3>
                 <p className="text-brand-gold-text/90 leading-relaxed font-serif text-lg mb-8">
-                  Your response has been warmly received. We cannot wait to celebrate with you!
+                  {attending ? 'Your response has been warmly received. We cannot wait to celebrate with you, Insha Allah!' : 'Thank you for letting us know. You will be in our duas.'}
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
@@ -110,6 +120,23 @@ export const RSVPForm: React.FC = () => {
                 </div>
 
                 <div>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Will You Attend?</label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Joyfully Attending', 'Regretfully Unable'].map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, attendance: opt })}
+                        className={`px-3 py-3 rounded-full border font-serif text-base transition-all duration-300 ${formData.attendance === opt ? 'bg-brand-mocha text-brand-gold-light border-brand-mocha shadow-md' : 'bg-white/80 text-brand-gold-deep border-stone-200/60 hover:border-brand-gold/50'}`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {attending && (
+                <div>
                   <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Number of Guests</label>
                   <div className="relative group">
                     <select
@@ -127,11 +154,23 @@ export const RSVPForm: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                )}
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Dietary Notes (Optional)</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Phone Number (Optional)</label>
+                  <input
+                    type="tel"
+                    placeholder="E.g., 077 123 4567"
+                    className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-gold-deep"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Notes (Optional)</label>
                   <textarea
-                    placeholder="We'd love to know if you have any allergies..."
+                    placeholder="Any message or dietary needs..."
                     className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
                     value={formData.dietaryNotes}
                     onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}

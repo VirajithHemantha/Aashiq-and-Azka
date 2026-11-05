@@ -125,13 +125,13 @@ export default function App() {
       <DecorativeDivider />
 
       <div className="py-8 sm:py-12 bg-brand-champagne/90 relative inner-border-gold m-4 sm:m-8 rounded-[2rem]">
-        <RSVPForm />
+        <RSVPForm guestName={guestName} />
       </div>
 
       <DecorativeDivider />
 
       <div className="py-8 sm:py-12 bg-gradient-to-b from-brand-champagne/80 to-white/90 relative">
-        <WishesSection />
+        <WishesSection guestName={guestName} />
       </div>
 
       {/* Elegant Footer Signature */}
