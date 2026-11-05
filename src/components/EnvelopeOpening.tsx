@@ -65,7 +65,7 @@ export function EnvelopeOpening({ onComplete, onMusicStart, guestName }: { onCom
           animate={{ opacity: 1 }}
           transition={{ delay: 3 }}
           onClick={handleVideoEnd}
-          className="absolute bottom-8 right-8 text-white/50 hover:text-white font-sans uppercase tracking-[0.2em] text-[10px] transition-colors z-20"
+          className="absolute bottom-8 right-8 text-brand-gold-light/60 hover:text-brand-gold-light font-sans uppercase tracking-[0.2em] text-[10px] transition-colors z-20"
         >
           Skip Video
         </motion.button>

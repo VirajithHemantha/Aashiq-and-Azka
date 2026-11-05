@@ -28,26 +28,26 @@ export const Location: React.FC = () => {
             <div className="mb-10 relative z-10 text-center flex flex-col items-center">
               <div className="inline-flex items-center justify-center gap-4 mb-6">
                 <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-brand-mocha/60" />
-                <span className="text-brand-mocha uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
+                <span className="text-brand-gold-deep uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
                   The Venue
                 </span>
                 <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-brand-mocha/60" />
               </div>
 
-              <h2 className="text-5xl sm:text-6xl font-display text-brand-mocha mb-6 leading-tight drop-shadow-sm">
+              <h2 className="text-5xl sm:text-6xl font-display text-brand-gold-deep mb-6 leading-tight drop-shadow-sm">
                 Where We <br />
-                <span className="italic font-light text-brand-mocha">Celebrate</span>
+                <span className="italic font-light text-brand-gold-deep">Celebrate</span>
               </h2>
 
               <div className="flex flex-col items-center gap-5 mt-10">
                 <div className="w-16 h-16 bg-stone-50 rounded-full border border-brand-gold/40 shadow-inner flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500 mb-2">
-                  <MapPin className="text-brand-mocha w-6 h-6" />
+                  <MapPin className="text-brand-gold-deep w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-3xl font-serif text-brand-mocha mb-2">Hill View Resort</p>
-                  <p className="text-xs uppercase tracking-[0.2em] font-medium text-brand-sand leading-relaxed mb-6">195, Kandawatta, Koswattagoda<br />Dharga Town</p>
+                  <p className="text-3xl font-serif text-brand-gold-deep mb-2">Hill View Resort</p>
+                  <p className="text-xs uppercase tracking-[0.2em] font-medium text-brand-gold-text leading-relaxed mb-6">195, Kandawatta, Koswattagoda<br />Dharga Town</p>
                   
-                  <p className="text-brand-sand/90 italic font-serif text-lg leading-relaxed max-w-sm mx-auto mb-10">
+                  <p className="text-brand-gold-text/90 italic font-serif text-lg leading-relaxed max-w-sm mx-auto mb-10">
                     Join us for lunch at 12.30 PM, Insha Allah.
                   </p>
 
@@ -55,7 +55,7 @@ export const Location: React.FC = () => {
                     href={liveLocationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-brand-mocha text-brand-champagne px-8 py-4 rounded-full font-sans tracking-[0.2em] text-xs uppercase hover:bg-brand-mocha hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-300 active:scale-95 group/btn"
+                    className="inline-flex items-center gap-3 bg-brand-mocha text-brand-gold-light px-8 py-4 rounded-full font-sans tracking-[0.2em] text-xs uppercase hover:bg-brand-mocha hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-300 active:scale-95 group/btn"
                   >
                     <Navigation className="w-4 h-4 text-brand-gold group-hover/btn:rotate-45 transition-transform duration-300" />
                     Open Live Location

@@ -32,11 +32,11 @@ export const WishesSection: React.FC = () => {
 
       <div className="text-center mb-16 relative">
         <Sparkles className="absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 text-brand-gold/40 animate-pulse" />
-        <span className="text-brand-mocha uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block drop-shadow-sm">
+        <span className="text-brand-gold-deep uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block drop-shadow-sm">
           Guestbook
         </span>
-        <h2 className="text-5xl sm:text-7xl font-display text-brand-mocha tracking-tight drop-shadow-sm">
-          Blessings & <span className="italic font-light text-brand-mocha">Wishes</span>
+        <h2 className="text-5xl sm:text-7xl font-display text-brand-gold-deep tracking-tight drop-shadow-sm">
+          Blessings & <span className="italic font-light text-brand-gold-deep">Wishes</span>
         </h2>
         <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-brand-gold/60 to-transparent mx-auto mt-8" />
       </div>
@@ -56,30 +56,30 @@ export const WishesSection: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="text-center mb-10">
-              <p className="text-brand-sand font-serif italic text-lg leading-relaxed max-w-lg mx-auto">
+              <p className="text-brand-gold-text font-serif italic text-lg leading-relaxed max-w-lg mx-auto">
                 Leave a dua or a little note for Aashiq & Azka as they begin their journey together.
               </p>
             </div>
 
             <div className="space-y-6">
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2 text-left">Your Name</label>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2 text-left">Your Name</label>
                 <input
                   required
                   type="text"
                   placeholder="E.g., Aunty Fathima"
-                  className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-mocha"
+                  className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-gold-deep"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
               
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2 text-left">Your Message</label>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2 text-left">Your Message</label>
                 <textarea
                   required
                   placeholder="Barakallahu lakuma..."
-                  className="w-full bg-white/80 px-6 py-5 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-mocha"
+                  className="w-full bg-white/80 px-6 py-5 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-brand-gold-deep"
                   value={formData.message}
                   onChange={(e) => { setSent(false); setFormData({ ...formData, message: e.target.value }); }}
                 />
@@ -90,7 +90,7 @@ export const WishesSection: React.FC = () => {
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full bg-brand-mocha text-brand-champagne py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-brand-mocha transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
+                className="w-full bg-brand-mocha text-brand-gold-light py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-brand-mocha transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
               >
                 {isSubmitting ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -112,7 +112,7 @@ export const WishesSection: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="text-center text-brand-sand font-serif italic text-lg -mt-8"
+              className="text-center text-brand-gold-text font-serif italic text-lg -mt-8"
             >
               Jazakallahu khairan — your blessing has been sent to Aashiq &amp; Azka.
             </motion.p>

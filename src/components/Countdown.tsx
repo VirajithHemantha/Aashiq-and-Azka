@@ -50,13 +50,13 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
           
           <div className="relative pt-10 pb-8 px-4 flex flex-col items-center w-full z-10 transition-transform duration-700 group-hover:-translate-y-3">
             {/* Elegant number */}
-            <span className="text-5xl sm:text-6xl lg:text-7xl font-display font-medium text-brand-mocha mb-4 drop-shadow-[0_2px_4px_rgba(197,160,89,0.3)] tabular-nums tracking-wide">
+            <span className="text-5xl sm:text-6xl lg:text-7xl font-display font-medium text-brand-gold-deep mb-4 drop-shadow-[0_2px_4px_rgba(197,160,89,0.3)] tabular-nums tracking-wide">
               {String(item.value).padStart(2, '0')}
             </span>
             {/* Divider line */}
             <div className="w-10 h-[1.5px] bg-gradient-to-r from-transparent via-brand-mocha/50 to-transparent mb-4" />
             {/* Label */}
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] text-brand-sand font-semibold">{item.label}</span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] text-brand-gold-text font-semibold">{item.label}</span>
           </div>
         </motion.div>
       ))}

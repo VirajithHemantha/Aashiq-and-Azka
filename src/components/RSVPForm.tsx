@@ -46,17 +46,17 @@ export const RSVPForm: React.FC = () => {
           <Sparkles className="absolute -top-6 -left-6 w-12 h-12 text-brand-gold/30 animate-pulse" />
           
           <div className="inline-flex items-center justify-center lg:justify-start gap-4 mb-6">
-            <span className="text-brand-mocha uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
+            <span className="text-brand-gold-deep uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
               Kindly Respond
             </span>
             <div className="hidden lg:block w-16 h-[1px] bg-gradient-to-r from-brand-mocha/60 to-transparent" />
           </div>
 
-          <h2 className="text-5xl sm:text-6xl font-display text-brand-mocha tracking-tight leading-[1.1] mb-6 drop-shadow-sm">
-            Reserve <span className="italic font-light text-brand-mocha">Your</span> Seat
+          <h2 className="text-5xl sm:text-6xl font-display text-brand-gold-deep tracking-tight leading-[1.1] mb-6 drop-shadow-sm">
+            Reserve <span className="italic font-light text-brand-gold-deep">Your</span> Seat
           </h2>
           
-          <p className="text-brand-sand/90 font-serif text-lg leading-relaxed mb-6">
+          <p className="text-brand-gold-text/90 font-serif text-lg leading-relaxed mb-6">
             Your presence means the world to us. Please kindly let us know if you will be able to join us for the Waleema lunch.
           </p>
 
@@ -77,13 +77,13 @@ export const RSVPForm: React.FC = () => {
                 <div className="w-24 h-24 bg-green-50/80 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner border border-green-100">
                   <CheckCircle className="w-12 h-12 text-green-500" />
                 </div>
-                <h3 className="text-4xl font-display text-brand-mocha mb-4 tracking-tight drop-shadow-sm">With Gratitude</h3>
-                <p className="text-brand-sand/90 leading-relaxed font-serif text-lg mb-8">
+                <h3 className="text-4xl font-display text-brand-gold-deep mb-4 tracking-tight drop-shadow-sm">With Gratitude</h3>
+                <p className="text-brand-gold-text/90 leading-relaxed font-serif text-lg mb-8">
                   Your response has been warmly received. We cannot wait to celebrate with you!
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
-                  className="px-6 py-2 rounded-full border border-brand-gold/30 text-brand-mocha font-sans text-[10px] tracking-[0.2em] uppercase hover:bg-brand-gold/10 transition-all duration-300 shadow-sm"
+                  className="px-6 py-2 rounded-full border border-brand-gold/30 text-brand-gold-deep font-sans text-[10px] tracking-[0.2em] uppercase hover:bg-brand-gold/10 transition-all duration-300 shadow-sm"
                 >
                   Update Response
                 </button>
@@ -98,7 +98,7 @@ export const RSVPForm: React.FC = () => {
                 className="space-y-6 bg-white/40 p-8 sm:p-10 rounded-[2.5rem] border border-white shadow-[0_15px_30px_rgba(0,0,0,0.05)]"
               >
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2">Full Name</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Full Name</label>
                   <input
                     required
                     type="text"
@@ -110,10 +110,10 @@ export const RSVPForm: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2">Number of Guests</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Number of Guests</label>
                   <div className="relative group">
                     <select
-                      className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 appearance-none font-serif italic text-lg shadow-inner text-brand-mocha cursor-pointer"
+                      className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 appearance-none font-serif italic text-lg shadow-inner text-brand-gold-deep cursor-pointer"
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                     >
@@ -122,14 +122,14 @@ export const RSVPForm: React.FC = () => {
                       <option value="3">3 Guests</option>
                       <option value="4">4 Guests</option>
                     </select>
-                    <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-brand-mocha transition-transform duration-300 group-hover:scale-110">
+                    <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-brand-gold-deep transition-transform duration-300 group-hover:scale-110">
                       <Heart className="w-5 h-5 fill-brand-gold/30 drop-shadow-sm" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-sand mb-3 ml-2">Dietary Notes (Optional)</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-3 ml-2">Dietary Notes (Optional)</label>
                   <textarea
                     placeholder="We'd love to know if you have any allergies..."
                     className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-mocha/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
@@ -142,7 +142,7 @@ export const RSVPForm: React.FC = () => {
                   <button
                     disabled={status === 'loading'}
                     type="submit"
-                    className="w-full bg-brand-mocha text-brand-champagne py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-brand-mocha/90 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
+                    className="w-full bg-brand-mocha text-brand-gold-light py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-brand-mocha/90 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
                   >
                     {status === 'loading' ? (
                       <Loader2 className="w-5 h-5 animate-spin" />

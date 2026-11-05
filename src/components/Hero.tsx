@@ -77,17 +77,17 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
           className="flex flex-col items-center"
         >
           {/* Bismillah */}
-          <p dir="rtl" lang="ar" className="font-arabic text-3xl sm:text-5xl text-brand-mocha mb-3 leading-relaxed drop-shadow-sm">
+          <p dir="rtl" lang="ar" className="font-arabic text-3xl sm:text-5xl text-brand-gold-deep mb-3 leading-relaxed drop-shadow-sm">
             بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ
           </p>
-          <p className="text-brand-sand uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[9px] sm:text-[11px] font-semibold mb-6 sm:mb-8 font-sans leading-relaxed">
+          <p className="text-brand-gold-text uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[9px] sm:text-[11px] font-semibold mb-6 sm:mb-8 font-sans leading-relaxed">
             In the name of Allah<br />The Most Beneficent and the Most Merciful
           </p>
 
           {/* Couple logo */}
           <Monogram className="w-24 h-24 sm:w-32 sm:h-32 mb-4 sm:mb-6" />
 
-          <span className="text-brand-mocha uppercase tracking-[0.4em] sm:tracking-[0.6em] text-xs sm:text-sm font-medium mb-4 sm:mb-6 block drop-shadow-sm font-sans">
+          <span className="text-brand-gold-deep uppercase tracking-[0.4em] sm:tracking-[0.6em] text-xs sm:text-sm font-medium mb-4 sm:mb-6 block drop-shadow-sm font-sans">
             Waleema Ceremony
           </span>
 
@@ -95,7 +95,7 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
             {/* Soft glow behind text for contrast and magical feel */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[140%] bg-white/40 blur-[50px] sm:blur-[80px] rounded-full pointer-events-none" />
 
-            <h1 className="relative text-6xl sm:text-[6.5rem] lg:text-[8rem] font-script text-brand-mocha leading-[1.1] sm:leading-[1] drop-shadow-sm">
+            <h1 className="relative text-6xl sm:text-[6.5rem] lg:text-[8rem] font-script text-brand-gold-deep leading-[1.1] sm:leading-[1] drop-shadow-sm">
               Aashiq <br className="sm:hidden" />
               <span className="text-brand-gold mx-2 sm:mx-6 text-5xl sm:text-[5rem] lg:text-[6rem] inline-block">&</span>
               <br className="sm:hidden" />
@@ -105,9 +105,9 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div className="hidden sm:block h-[1px] w-20 bg-gradient-to-r from-transparent to-brand-gold/40" />
-            <p className="text-[1.1rem] sm:text-2xl font-serif italic text-brand-mocha tracking-wide px-4 text-center max-w-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(255,255,255,0.5)]">
+            <p className="text-[1.1rem] sm:text-2xl font-serif italic text-brand-gold-deep tracking-wide px-4 text-center max-w-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(255,255,255,0.5)]">
               {guestName ? (
-                <>We cordially invite <span className="not-italic font-semibold text-brand-mocha whitespace-nowrap">{guestName}</span> to celebrate our special day with us.</>
+                <>We cordially invite <span className="not-italic font-semibold text-brand-gold-deep whitespace-nowrap">{guestName}</span> to celebrate our special day with us.</>
               ) : (
                 'Insha Allah, together with our families we warmly invite you to share our joy'
               )}
@@ -120,7 +120,7 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
             <div className="absolute -inset-1 bg-gradient-to-r from-brand-gold/40 via-brand-gold-light/40 to-brand-gold/40 rounded-full blur-[8px] opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-300 transform group-hover:scale-105" />
             <div className="relative px-4 sm:px-12 py-3 sm:py-5 bg-white/70 backdrop-blur-lg border border-brand-gold/50 rounded-full shadow-[0_8px_30px_rgba(197,160,89,0.15)] overflow-hidden whitespace-nowrap flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
-              <span className="relative text-[16px] sm:text-3xl font-serif text-brand-mocha tracking-[0.2em] sm:tracking-[0.4em] font-medium drop-shadow-sm flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+              <span className="relative text-[16px] sm:text-3xl font-serif text-brand-gold-deep tracking-[0.2em] sm:tracking-[0.4em] font-medium drop-shadow-sm flex items-center gap-2 sm:gap-3 whitespace-nowrap">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-brand-gold flex-shrink-0" />
                 26 . 12 . 2026
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-brand-gold flex-shrink-0" />
@@ -134,7 +134,7 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
       {/* Premium Side Decorative Text */}
       <div className="absolute left-8 sm:left-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 mix-blend-multiply opacity-70">
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-gold/50" />
-        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-mocha font-semibold font-sans">
+        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-gold-deep font-semibold font-sans">
           Hill View Resort • Dharga Town
         </p>
         <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-brand-gold/50" />
@@ -142,7 +142,7 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
 
       <div className="absolute right-8 sm:right-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 mix-blend-multiply opacity-70">
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-gold/50" />
-        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-mocha font-semibold font-sans rotate-180">
+        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-gold-deep font-semibold font-sans rotate-180">
           Save the Date • December 2026
         </p>
         <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-brand-gold/50" />
@@ -156,7 +156,7 @@ export const Hero: React.FC<{ guestName?: string }> = ({ guestName }) => {
         transition={{ delay: 2.5, duration: 1 }}
         whileHover={{ scale: 1.1 }}
       >
-        <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-[0.4em] text-brand-sand font-semibold drop-shadow-md">Discover</span>
+        <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-[0.4em] text-brand-gold-text font-semibold drop-shadow-md">Discover</span>
         <div className="w-[1px] h-12 sm:h-20 bg-gradient-to-b from-brand-gold/60 to-transparent animate-bounce" />
       </motion.div>
     </div>

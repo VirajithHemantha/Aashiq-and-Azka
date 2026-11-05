@@ -9,6 +9,8 @@
   --color-brand-ivory: #ffffff;
   --color-brand-gold: #c5a059;
   --color-brand-gold-light: #e5cd97;
+  --color-brand-gold-deep: #8a6620; /* Gold for headings & main text (readable on ivory) */
+  --color-brand-gold-text: #a17c34; /* Softer gold for secondary text */
   --color-brand-mocha: #061e14; /* Deep emerald */
   --color-brand-sand: #164f38; /* Light emerald */
 
@@ -22,7 +24,7 @@
 
 :root {
   background-color: var(--color-brand-ivory);
-  color: #292524;
+  color: #8a6620;
 }
 
 html, body {
