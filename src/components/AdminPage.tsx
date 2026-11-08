@@ -57,7 +57,7 @@ export const AdminPage: React.FC = () => {
         <form onSubmit={handleGenerate} className="bg-white/80 rounded-2xl border border-brand-gold/30 shadow-sm p-6 sm:p-8 space-y-5">
           <div>
             <label htmlFor="prefix" className="block text-[10px] uppercase tracking-[0.2em] font-bold text-brand-gold-text mb-2">Select Prefix</label>
-            <select id="prefix" className={inputClass} value={prefix} onChange={(e) => setPrefix(e.target.value as PrefixKey)}>
+            <select id="prefix" className={inputClass} value={prefix} onChange={(e) => { setPrefix(e.target.value as PrefixKey); setResult(null); }}>
               {PREFIXES.map((p) => (
                 <option key={p.key} value={p.key}>{p.label}</option>
               ))}
@@ -72,7 +72,7 @@ export const AdminPage: React.FC = () => {
               placeholder="e.g. Sanjaya"
               className={inputClass}
               value={guestName}
-              onChange={(e) => setGuestName(e.target.value)}
+              onChange={(e) => { setGuestName(e.target.value); setResult(null); }}
             />
           </div>
 
